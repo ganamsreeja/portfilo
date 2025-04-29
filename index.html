@@ -314,50 +314,41 @@
       color: #dc3545; /* Red */
     }
       
-    #contact-details { /* Light blue gradient background */
-      padding: 40px 20px;
-      text-align:left;
-      font-family: sans-serif;
-    }
-    
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background-color:azure; /* Semi-transparent white background */
-      padding: 15px 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .contact-icon {
-      width: 24px; /* Adjust the size as needed */
-      height: 24px; /* Adjust the size as needed */
-    }
-    
-    .contact-item p {
-      margin: 0;
-      font-size: 1em;
-      color: #555;
-    }
-    
-    .contact-item a {
-      color: #555;
-      text-decoration: none;
-    }
-    
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
+    /* Contact Section */
+.contact-card {
+  background-color: azure;
+  border-left: 5px solid #3b82f6;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+.contact-info i {
+  width: 20px;
+  color: #3b82f6;
+}
     
     /* Responsive adjustments */
     @media (max-width: 600px) {
@@ -559,17 +550,19 @@
     </div>
   </section>
 
-  <!-- Contact Details Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p><a href="tel:+916300452768">+91 6300452768</a></p>
-    <p>You can reach me anytime via email:</p>
-    <a href="mailto:ganamsreeja82@gmail.com" class="email-link">ganamsreeja82@gmail.com</a>
-    <p><a href="mailto:23215a6606@bvrit.ac.in" alt="student Email">23215a6606@bvrit.ac.in</a></p>
-
-    <p>Hyderabad, India</p>
-
-  </section>
+ <!-- Contact Section -->
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <div class="contact-card">
+    <div class="contact-info">
+      <p><i class="fas fa-phone"></i> <a href="tel:+916300452768">+91 6300452768</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:ganamsreeja82@gmail.com">ganamsreeja82@gmail.com</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:23215a6606@bvrit.ac.in">23215a6606@bvrit.ac.in</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Hyderabad, India</p>
+    </div>
+  </div>
+</section>
+   
   
 
   <!-- Footer -->
