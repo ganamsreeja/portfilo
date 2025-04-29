@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganam Sreeja - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reset and Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: #1f2937;
+      color:white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      height: 70px; /* set explicit height */
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+    }
+    
+    .logo {
+      font-size: 1.2em;
+      font-weight: bold;
+      color:#222;
+    }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .nav-links li {
+      margin-left: 20px;
+    }
+    
+    .nav-links a {
+      color:white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color:beige;
+    }
+    
+    /* Header */
+    .header-section {
+      color:#222;
+      text-align: center;
+      padding: 140px; 
+      margin-top: 60px;
+      padding-top: 150px;
+    }
+    
+    .name-and-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .name-and-image h1 {
+      font-size: 1.5em;
+    }
+    
+    .name-and-image img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+    }
+    
+    .social-links a {
+      margin: 0 10px;
+      color: white;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #facc15;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Sections */
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color:azure;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #1f2937;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 10px;
+    }
+    
+    /* Cards */
+    .education-card,
+    .internship-card,
+    .project-card {
+      background-color:azure;
+      border-left: 5px solid #3b82f6;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+    
+    /* Skills */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .skill-category {
+      background:hsla(204, 84%, 88%, 0);
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1 1 45%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    
+    .skill-category h4 {
+      font-size: 1.2em;
+      color: #1d4ed8;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 5px;
+    }
+    
+    .skill-item span {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 5px 0;
+      background: #cfe8f8;
+      border-radius: 5px;
+      color: #1e3a8a;
+    }
+    
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .project-content h3 {
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+    
+    /* Internship Section Styles */
+    #internship {
+      padding: 50px 0;
+      background-color: #f9f9f9;
+    }
+    
+    #internship h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .internship-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .internship-entry {
+      background-color: #ffffff;
+      padding: 20px 30px;
+      border-left: 5px solid #4CAF50;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .internship-entry:hover {
+      transform: scale(1.02);
+    }
+    
+    .internship-entry h3 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #222;
+    }
+    
+    .internship-entry h4 {
+      color: #555;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+    
+    .internship-entry p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    /* Styles for the Appreciate Section */
+    /* Appreciate Section */
+.appreciate-card {
+  background-color: azure;
+  border-left: 5px solid #3b82f6;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.appreciate-card h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.appreciate-card img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 6px;
+}
+    
+    /* In your style.css file */
+    .certifications-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust the minmax width as needed */
+      gap: 20px; /* Adjust the gap between the blocks */
+      padding: 20px;
+    }
+    
+    
+    .certification-card > div {
+      background-color: #c9eaee;
+      border: 2px solid #b2ebf2;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    
+    .certification-card img {
+      max-width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .certification-card h3 {
+      color: #007bff; /* Or #28a745 or #dc3545 based on the certifier */
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .certification-card h3.nptel {
+      color: #28a745;
+    }
+    
+    .certification-card h3.oracle {
+      color: #dc3545;
+    }
+    
+    .certification-card p {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    /* Specific colors for different certifications (optional) */
+    .infosys-title {
+      color: #007bff; /* Blue */
+    }
+    
+    .nptel-title {
+      color: #28a745; /* Green */
+    }
+    
+    .oracle-title {
+      color: #dc3545; /* Red */
+    }
+      
+    #contact-details { /* Light blue gradient background */
+      padding: 40px 20px;
+      text-align:left;
+      font-family: sans-serif;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background-color:azure; /* Semi-transparent white background */
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-icon {
+      width: 24px; /* Adjust the size as needed */
+      height: 24px; /* Adjust the size as needed */
+    }
+    
+    .contact-item p {
+      margin: 0;
+      font-size: 1em;
+      color: #555;
+    }
+    
+    .contact-item a {
+      color: #555;
+      text-decoration: none;
+    }
+    
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .contact-item {
+        width: 80%;
+      }
+    }
+      
+    /* Footer */
+    footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .footer-content .social-links a {
+      color: white;
+      margin: 0 10px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .name-and-image {
+        flex-direction: column;
+      }
+    
+      .skills-container {
+        flex-direction: column;
+      }
+    
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#appreciate">appreciate</a></li>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="nav-spacer"></div>
+
+  <!-- About Section -->
+  <section id="about" class="section header-section">
+    <div class="header-content">
+      <div class="name">
+        <h1>Ganam Sreeja</h1>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a third-year B.Tech Artificial Intelligence and Machine Learning student with a GPA of 8.03 at BVRIT. Passionate about AI, ML, and software development, I enjoy solving complex problems using Python, Java, and C++.</p>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="education-card">
+      <h3>B.Tech in AI & ML</h3>
+      <p>BVRIT, Narsapur (2023 - Present) | GPA: 8.03</p>
+    </div>
+    <div class="education-card">
+      <h3>Diploma in Computer Engineering</h3>
+      <p>Govt. Polytechnic for Women, jogipet (2020-2023) | GPA: 7.75</p>
+    </div>
+    <div class="education-card">
+      <h3>SSC</h3>
+      <p>St. Anthony's High School, Sangareddy (2020) | GPA: 10/10</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h4>Programming Languages</h4>
+        <div class="skill-item"><span>Python</span></div>
+        <div class="skill-item"><span>Java</span></div>
+        <div class="skill-item"><span>C++</span></div>
+        <div class="skill-item"><span>C</span></div>
+      </div>
+      <div class="skill-category">
+        <h4>Machine Learning</h4>
+        <div class="skill-item"><span>Regression</span></div>
+        <div class="skill-item"><span>Classification</span></div>
+        <div class="skill-item"><span>Clustering</span></div>
+      </div>
+      <div class="skill-category">
+        <h4>Deep Learning</h4>
+        <div class="skill-item"><span>Neural Networks</span></div>
+        <div class="skill-item"><span>CNNs</span></div>
+        <div class="skill-item"><span>RNNs</span></div>
+        <div class="skill-item"><span>Transfer Learning</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developer Tools Section -->
+  <section id="technologies" class="section">
+    <h2>Developer Tools</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <div class="skill-item"><span>Jupyter Notebook</span></div>
+        <div class="skill-item"><span>VS Code</span></div>
+        <div class="skill-item"><span>MySQL</span></div>
+        <div class="skill-item"><span>GitHub</span></div>
+        <div class="skill-item"><span>Google Colab</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Cross Domain Correspondence Learning</h3>
+        <p>Image-Based soil quality prediction using RGB analysis and machine learning.</p>
+      </div>
+      <div class="project-card">
+        <h3>Driver Drowsiness Detection System</h3>
+        <p>Hostel Management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internships Section -->
+  <section id="internships" class="section">
+    <h2>Internships</h2>
+    <div class="internship-card">
+      <img src="aws logo.jpeg" alt="AWS Academy Logo">
+      <h3>AICTE-EduSkills Virtual Internship (AWS Data Engineering Intern)</h3>
+      <p>Hands-on experience with AWS services like ETL, data lakes, and cloud storage.</p>
+    </div>
+  </section>
+
+  <!-- appreciate section-->
+<section id="appreciate" class="section">
+  <h2>Appreciations</h2>
+  <div class="appreciate-card">
+    <img src="citd logo.jpeg" alt="Diploma industrial training in AI" style="float: left; margin-right: 20px; max-width: 120px;">
+    <div style="overflow: hidden;">
+      <h3>Diploma Industrial Training in AI</h3>
+      <p>Details about your appreciation or achievement can go here.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Certifications Section -->
+  <section id="certificates" class="section">
+    <h2>Certifications</h2>
+    <div class="certification-card">
+      <img src="nptel logo.jpeg" alt="NPTEL">
+      <h4>Soft Skills - NPTEL (58%, Oct 2024)</h4>
+    </div>
+    <div class="certification-card">
+      <img src="nptel logo.jpeg" alt="NPTEL">
+      <h4>Privacy & Security in Online Social Media - NPTEL (52%, Apr 2024)</h4>
+    </div>
+    <div class="certification-card">
+      <img src="oracle logo.jpeg" alt="Oracle">
+      <h4>Database Programming with SQL - Oracle Academy (Dec 2023)</h4>
+    </div>
+    <div class="certification-card">
+      <img src="infosey.jpeg" alt="Infosys">
+      <h4>Natural Language Processing Foundation - Infosys Springboard (Apr 2025)</h4>
+    </div>
+  </section>
+
+  <!-- Contact Details Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p><a href="tel:+916300452768">+91 6300452768</a></p>
+    <p>You can reach me anytime via email:</p>
+    <a href="mailto:ganamsreeja82@gmail.com" class="email-link">ganamsreeja82@gmail.com</a>
+    <p><a href="mailto:23215a6606@bvrit.ac.in" alt="student Email">23215a6606@bvrit.ac.in</a></p>
+
+    <p>Hyderabad, India</p>
+
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Ganam Sreeja. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
